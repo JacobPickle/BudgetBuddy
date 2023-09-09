@@ -1,0 +1,9 @@
+<%= @item.name %>: <%= @item.price %>
+
+<ul>
+  <li><%= link_to "Edit", @item %></li>
+  <li><%= link_to "Destroy", @item, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

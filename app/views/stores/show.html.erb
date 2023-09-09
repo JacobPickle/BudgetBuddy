@@ -1,0 +1,15 @@
+<h1><%= @store.name %></h1>
+
+<h3>Purchases</h3>
+<%= render @store.purchases %>
+
+<h2>Add a purchase:</h2>
+<%= render 'purchases/form' %>
+
+<ul>
+  <li><%= link_to "Edit", edit_store_path(@store) %></li>
+  <li><%= link_to "Destroy", store_path(@store), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

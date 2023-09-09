@@ -1,0 +1,16 @@
+<h1>Edit purchase</h1>
+
+<!-- TODO: Refactor to use partial -->
+<%= form_with model: @purchase do |form| %>
+  <p>
+    <%= form.label :Date %><br>
+    <%= form.date_field :purchase_date %>
+  </p>
+  <p>
+    <%= form.label :Total %><br>
+    <%= form.number_field :total , step: 0.01 %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
