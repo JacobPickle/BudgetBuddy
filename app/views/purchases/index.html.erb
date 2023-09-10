@@ -1,11 +1,12 @@
-<h1>purchases</h1>
+<h1>Purchases from the last two weeks</h1>
 
 <ul>
-  <% @purchases.each do |purchase| %>
+  <% @purchases.where(purchase_date: 2.weeks.ago..Date.current).each do |purchase| %>
     <li>
-        <%= link_to purchase.name, purchase %>
+        <%= link_to purchase.purchase_date, purchase %>
+        $<%= purchase.total%>
     </li>
   <% end %>
 
-  <%= link_to "New purchase", new_purchase_path %>
+  <%= link_to "New purchase", "/stores" %>
 </ul>

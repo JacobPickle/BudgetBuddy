@@ -1,5 +1,8 @@
 <p>
     <%= item.name %>: <%= item.price %>
 
-    <%= link_to "View", item %>
+    <%= link_to "Delete", item, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
 </p>

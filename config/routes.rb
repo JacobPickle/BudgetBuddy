@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root "stores#index"
+  root "purchases#index"
 
   resources :stores do
-    resources :purchases , shallow: true do
-      resources :items , shallow: true
-    end
+    resources :purchases
+  end
+  resources :purchases do
+    resources :items, shallow:true
   end
 end
