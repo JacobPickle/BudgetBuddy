@@ -1,0 +1,9 @@
+<%= form_for Setting.new do |f| %>
+  <div class="form-group">
+    <label class="control-label">Weeks of data</label>
+    <%= f.number_field :weeks, value: Setting.weeks, class: "form-control"  %>
+  </div>
+  <p>
+    <%= f.submit "Save Settings"%>
+  </p>
+<% end %>

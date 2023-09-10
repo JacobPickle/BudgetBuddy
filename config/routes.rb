@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :purchases do
     resources :items, shallow:true
   end
+
+  resource :settings
 end
