@@ -14,10 +14,10 @@
 <strong>Add an item:</strong>
 <%= render 'items/form' %>
 
-<ul>
-  <li><%= link_to "Edit Purchase", edit_purchase_path(@purchase) %></li>
-  <li><%= link_to "Destroy Purchase", purchase_path(@purchase), data: {
+</br>
+<%= link_to "Edit Purchase", edit_purchase_path(@purchase) %>
+</br>
+<%= link_to "Destroy Purchase", purchase_path(@purchase), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  } %>
