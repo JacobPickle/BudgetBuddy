@@ -1,27 +1,25 @@
-<h1>Purchases from the last <%= Setting.weeks %> weeks</h1>
+<%= render "/purchases/sidebar" %>
+<div class="main">
+  <h1>Purchases from the last <%= Setting.weeks %> weeks</h1>
 
-<table>
-  <tr>
-    <th>Store</th>
-    <th>Date of Purchase</th>
-    <th>Total</th>
-  </tr>
-  <% @purchases.where(purchase_date: Setting.weeks.weeks.ago..Date.current).each do |purchase| %>
+  <table>
     <tr>
-      <td>
-        <%= purchase.store.name%>
-      </td>
-      <td>
-        <%= link_to purchase.purchase_date, purchase %>
-      </td>
-      <td>
-        $<%= purchase.total%>
-      </td>
+      <th>Store</th>
+      <th>Date of Purchase</th>
+      <th>Total</th>
     </tr>
-    
-  <% end %>
-</table>
-</br>
-<%= link_to "New purchase", "/stores" %>
-</br>
-<%= link_to "Settings", "settings" %>
+    <% @purchases.where(purchase_date: Setting.weeks.weeks.ago..Date.current).each do |purchase| %>
+      <tr>
+        <td>
+          <%= purchase.store.name%>
+        </td>
+        <td>
+          <%= link_to purchase.purchase_date, purchase %>
+        </td>
+        <td>
+          $<%= purchase.total%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

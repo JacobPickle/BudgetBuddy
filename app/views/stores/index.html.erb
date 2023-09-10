@@ -1,8 +1,12 @@
-<h1>Select Store</h1>
+<%= render "/purchases/sidebar" %>
 
-<% @stores.each do |store| %>
-  <%= render store %>
-<% end %>
-</br>
+<div class="main">
+  <h1>Select Store</h1>
 
-<%= link_to "New Store", new_store_path(@store) %>
+  <% @stores.each do |store| %>
+    <%= render store %>
+  <% end %>
+  </br>
+
+  <%= link_to "New Store", new_store_path(@store) %>
+</div>

@@ -1,8 +1,14 @@
-<p>
-    <%= item.name %>: $<%= item.price %>
-
+<tr>
+  <td>
+    <%= item.name %>
+  </td>
+  <td>
+    $<%= item.price %>
+  </td>
+  <td>
     <%= link_to "Delete", item, data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-</p>
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </td>
+</tr>

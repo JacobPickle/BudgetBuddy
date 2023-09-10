@@ -1,11 +1,15 @@
-<h1><%= @store.name %></h1>
+<%= render "/purchases/sidebar" %>
 
-<h2>Add a purchase:</h2>
-<%= render 'purchases/form' %>
+<div class="main">
+  <h1><%= @store.name %></h1>
 
-<%= link_to "Edit Store", edit_store_path(@store) %>
-</br>
-<%= link_to "Destroy Store", store_path(@store), data: {
-  turbo_method: :delete,
-  turbo_confirm: "Are you sure?"
-} %>
+  <h2>Add a purchase:</h2>
+  <%= render 'purchases/form' %>
+
+  <%= link_to "Edit Store", edit_store_path(@store) %>
+  </br>
+  <%= link_to "Destroy Store", store_path(@store), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %>
+</div>

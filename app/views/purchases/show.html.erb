@@ -1,23 +1,33 @@
-<p>
-  <strong>Store:</strong>
-  <%= @purchase.store.name %>
+<%= render "/purchases/sidebar" %>
+<div class="main">
+  <p>
+    <strong>Store:</strong>
+    <%= @purchase.store.name %>
 
-  <strong>Date:</strong>
-  <%= @purchase.purchase_date %>
+    <strong>Date:</strong>
+    <%= @purchase.purchase_date %>
 
-  <strong>Total:</strong>
-  $<%= @purchase.total %>
-</p>
+    <strong>Total:</strong>
+    $<%= @purchase.total %>
+  </p>
 
-<%= render @purchase.items %>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Delete</th>
+    </tr>
+    <%= render @purchase.items %>
+  </table>
 
-<strong>Add an item:</strong>
-<%= render 'items/form' %>
+  <strong>Add an item:</strong>
+  <%= render 'items/form' %>
 
-</br>
-<%= link_to "Edit Purchase", edit_purchase_path(@purchase) %>
-</br>
-<%= link_to "Destroy Purchase", purchase_path(@purchase), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+  </br>
+  <%= link_to "Edit Purchase", edit_purchase_path(@purchase) %>
+  </br>
+  <%= link_to "Destroy Purchase", purchase_path(@purchase), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+</div>
