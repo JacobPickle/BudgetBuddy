@@ -1,4 +1,3 @@
-<h1>Purchase</h1>
 <p>
   <strong>Store:</strong>
   <%= @purchase.store.name %>
@@ -7,13 +6,12 @@
   <%= @purchase.purchase_date %>
 
   <strong>Total:</strong>
-  <%= @purchase.total %>
+  $<%= @purchase.total %>
 </p>
 
-<h3>Items</h3>
 <%= render @purchase.items %>
 
-<h2>Add an item:</h2>
+<strong>Add an item:</strong>
 <%= render 'items/form' %>
 
 <ul>
