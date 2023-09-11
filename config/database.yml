@@ -83,4 +83,3 @@ production:
   <<: *default
   database: BudgetBuddy_production
   username: BudgetBuddy
-  password: <%= ENV["BUDGETBUDDY_DATABASE_PASSWORD"] %>
