@@ -1,6 +1,9 @@
 <%= render "/purchases/sidebar" %>
 <div class="main">
   <h1>Purchases from the last <%= Setting.weeks %> weeks</h1>
+  <h2>Total spent: <%= total_spent = @purchases.where(purchase_date: Setting.weeks.weeks.ago..Date.current).sum("total") %></h2>
+  <h2>Weekly spending: <%= weekly_spending = total_spent/Setting.weeks %></h2>
+  <h2>Budget Balance: <%= Setting.weekly_budget - weekly_spending %></h2>
 
   <table>
     <tr>

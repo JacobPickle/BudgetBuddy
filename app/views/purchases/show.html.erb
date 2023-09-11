@@ -18,6 +18,14 @@
       <th>Delete</th>
     </tr>
     <%= render @purchase.items %>
+    <tr>
+      <td>
+        Tax
+      </td>
+      <td>
+        $<%= @purchase.total - @purchase.items.sum("price") %>
+      </td>
+    </tr>
   </table>
 
   <strong>Add an item:</strong>
