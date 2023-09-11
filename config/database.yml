@@ -82,4 +82,5 @@ test:
 production:
   <<: *default
   database: BudgetBuddy_production
-  username: BudgetBuddy
+  username: rails
+  password: rails
