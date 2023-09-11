@@ -5,7 +5,7 @@ set :application, "BudgetBuddy"
 set :repo_url, "git@github.com:JacobPickle/BudgetBuddy.git"
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :linked_files, %w{config/master.key}
-set :deploy_to, '/home/deployer/BudgetBuddy/current'
+set :deploy_to, '/home/deployer/BudgetBuddy'
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
