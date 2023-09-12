@@ -1,11 +1,13 @@
 # Change these
-server '143.198.145.223', port: 80, roles: [:web, :app, :db], primary: true
+server '143.198.145.223', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:JacobPickle/BudgetBuddy.git'
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :application,     'BudgetBuddy'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+set :linked_files, %w{config/master.key}
 
 # Don't change these unless you know what you're doing
 set :pty,             true
