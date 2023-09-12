@@ -23,7 +23,9 @@ environment ENV.fetch("RAILS_ENV") { "production" }
 
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
-bind "unix:///home/deploy/apps/BudgetBuddy/shared/tmp/sockets/BudgetBuddy-puma.sock"
+set :puma_bind,-> { "unix://#{shared_path}/tmp/sockets/puma.sock" }
+set :puma_state, -> { "#{shared_path}/tmp/pids/puma.state" }
+set :puma_pid, -> { "#{shared_path}/tmp/pids/puma.pid" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked web server processes. If using threads and workers together
