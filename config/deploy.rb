@@ -13,6 +13,7 @@ set :linked_files, %w{config/master.key}
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
+set :rails_env,       "production"
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :puma_bind,       "unix:///home/deploy/apps/BudgetBuddy/shared/tmp/sockets/puma.sock" 
