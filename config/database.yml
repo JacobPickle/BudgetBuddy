@@ -83,4 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: BudgetBuddy
+  database: BudgetBuddy_production
