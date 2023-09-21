@@ -27,7 +27,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 set :nvm_type, :user
-set :nvm_node, 'v0.39.1'
+set :nvm_node, 'v18.16.1'
 set :nvm_map_bins, %w{node npm}
 
 ## Defaults:
