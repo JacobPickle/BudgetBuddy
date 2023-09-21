@@ -71,6 +71,10 @@ group :test do
 
 end
 
+gem "rails-settings-cached", "~> 2.9"
+
+gem 'sshkit-sudo'
+
 gem "bootstrap", "~> 5.3"
 
 group :development do
