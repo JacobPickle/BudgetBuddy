@@ -8,6 +8,7 @@ require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
+require 'capistrano/yarn'
 require 'sshkit/sudo'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
