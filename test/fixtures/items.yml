@@ -3,9 +3,9 @@
 one:
   name: MyString
   price: 1.5
-  purchase_date: 2023-09-05
+  purchase: one
 
 two:
   name: MyString
   price: 1.5
-  purchase_date: 2023-09-05
+  purchase: two

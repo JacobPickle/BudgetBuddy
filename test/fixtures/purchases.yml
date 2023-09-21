@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  purchase_date: 2023-09-19
   total: 1.5
-  purchase_date: 2023-09-05
+  store: one
 
 two:
+  purchase_date: 2023-09-19
   total: 1.5
-  purchase_date: 2023-09-05
+  store: two

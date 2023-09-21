@@ -1,4 +1,5 @@
 class Purchase < ApplicationRecord
-    has_many :items
-    belongs_to :store
+  belongs_to :store
+  validates :purchase_date, presence: true
+  validates :total, presence: true
 end
