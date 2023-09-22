@@ -22,9 +22,8 @@ const Purchases = () => {
         <div key={index} className="col-md-6 col-lg-4">
           <div className="card mb-4">
             <div className="card-body">
-                <p>{purchase.purchase_date}</p>
-                <Link to={`/purchase/${purchase.id}`} className="btn custom-button">
-                    View Purchase
+                <Link to={`/purchase/${purchase.id}`}>
+                    {purchase.purchase_date}
                 </Link>
             </div>
           </div>
@@ -42,14 +41,16 @@ const Purchases = () => {
         <>
             <div>
                 <main>
+                    <h3>Purchases</h3>
                     <div>
                         {purchases.length > 0 ? allPurchases : noPurchase}
                     </div>
-                    <div className="text-end mb-3">
-                        <Link to="/purchase" className="btn custom-button">
-                            Create New Purchase
-                        </Link>
-                    </div>
+                    <Link to="/purchase" className="btn btn-link">
+                        Create New Purchase
+                    </Link>
+                    <Link to="/store" className="btn btn-link">
+                        Create New Store
+                    </Link>
                     <Link to="/" className="btn btn-link">
                         Home
                     </Link>

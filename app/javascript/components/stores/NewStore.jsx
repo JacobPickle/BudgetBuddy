@@ -61,8 +61,8 @@ const NewStore = () => {
                         <button type="submit" className="btn custom-button mt-3">
                             Create store
                         </button>
-                        <Link to="/stores" className="btn btn-link mt-3">
-                            Back to stores
+                        <Link to="/" className="btn btn-link mt-3">
+                            Home
                         </Link>
                     </form>
                 </div>

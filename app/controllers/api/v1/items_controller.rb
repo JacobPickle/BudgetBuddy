@@ -18,6 +18,11 @@ class Api::V1::ItemsController < ApplicationController
     render json: @item
   end
 
+  def show_by_purchase_id
+    items = Item.where(purchase_id: params[:purchase_id])
+    render json: items
+  end
+
   def destroy
     @item&.destroy
   end
@@ -25,7 +30,7 @@ class Api::V1::ItemsController < ApplicationController
   private
 
   def item_params
-    params.permit(:name, :price)
+    params.permit(:name, :price, :purchase_id)
   end
 
   def set_item

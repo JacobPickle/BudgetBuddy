@@ -87,7 +87,8 @@ const NewPurchase = () => {
                                 onChange={(event) => onChange(event, setPurchaseDate)}
                             />
                             <label>Example multiple select</label>
-                            <select className="form-control" onChange={(event) => onChange(event, setStore)}>
+                            <select className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChange(event, setStore)}>
+                                <option value="DEFAULT" disabled>Choose a store</option>
                                 {storeOptions}
                             </select>
                         </div>

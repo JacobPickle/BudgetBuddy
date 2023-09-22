@@ -7,7 +7,6 @@ class Api::V1::PurchasesController < ApplicationController
   end
 
   def create
-    store = Store.find(purchase_params[:store_id])
     purchase = Purchase.create!(purchase_params)
     if purchase
       render json: purchase

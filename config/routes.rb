@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'items/index'
       post 'items/create'
       get 'items/show/:id', to: 'items#show'
+      get 'items/show_by_purchase/:purchase_id', to: 'items#show_by_purchase_id'
       delete 'items/destroy/:id', to: 'items#destroy'
     end
   end
