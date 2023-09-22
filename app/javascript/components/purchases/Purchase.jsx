@@ -156,7 +156,7 @@ const Purchase = () => {
                                 />
                             </div>
                             <button type="submit" className="btn custom-button mt-3">
-                                Create purchase
+                                Add item
                             </button>
                         </form>
                         <button type="button" className="btn btn-danger" onClick={deletePurchase}>
