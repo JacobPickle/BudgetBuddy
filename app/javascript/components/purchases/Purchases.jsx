@@ -19,10 +19,10 @@ const Purchases = () => {
     }, []);
     
     const allPurchases = purchases.map((purchase, index) => (
-        <div key={index} className="col-md-6 col-lg-4">
-          <div className="card mb-4">
-            <div className="card-body">
-                <Link to={`/purchase/${purchase.id}`}>
+        <div key={index}>
+          <div>
+            <div>
+                <Link to={`/purchase/${purchase.id}`} className="btn purchase">
                     {purchase.purchase_date}
                 </Link>
             </div>
@@ -30,7 +30,7 @@ const Purchases = () => {
         </div>
     ));
     const noPurchase = (
-        <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
+        <div>
             <h4>
                 No purchases yet. Why not <Link to="/purchase">create one</Link>
             </h4>
@@ -45,14 +45,11 @@ const Purchases = () => {
                     <div>
                         {purchases.length > 0 ? allPurchases : noPurchase}
                     </div>
-                    <Link to="/purchase" className="btn btn-link">
+                    <Link to="/purchase" className="btn">
                         Create New Purchase
                     </Link>
-                    <Link to="/store" className="btn btn-link">
+                    <Link to="/store" className="btn">
                         Create New Store
-                    </Link>
-                    <Link to="/" className="btn btn-link">
-                        Home
                     </Link>
                 </main>
             </div>

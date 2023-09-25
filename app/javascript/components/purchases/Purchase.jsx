@@ -116,13 +116,13 @@ const Purchase = () => {
   
     return (
         <div>
-            <div className="container py-5">
-                <div className="row">
-                    <div className="col-sm-12 col-lg-2">
-                        <p><label>Purchase Date: </label> {purchase.purchase_date}</p>
-                        <p><label>Purchase Total: </label> ${purchase.total}</p>
+            <div>
+                <div>
+                    <div>
+                        <h4>Purchase</h4>
+                        <p><label>Date: </label> {purchase.purchase_date}</p>
+                        <p><label>Total: </label> ${purchase.total}</p>
                         <p><label>Store ID: </label> {purchase.store_id}</p>
-                        <br></br>
                         <table>
                             <thead>
                                 <tr>
@@ -132,10 +132,10 @@ const Purchase = () => {
                             </thead>
                             <tbody>{itemRows}</tbody>
                         </table>
-                        <br></br>
                         <form onSubmit={onSubmit}>
                             <div className="form-group">
-                                <label>Item Name</label>
+                                <h5>Add Item: </h5>
+                                <label>Name: </label>
                                 <input
                                     type="text"
                                     name="itemName"
@@ -144,8 +144,7 @@ const Purchase = () => {
                                     required
                                     onChange={(event) => onChange(event, setName)}
                                 />
-                                <br></br>
-                                <label>Item Price</label>
+                                <label>Price: </label>
                                 <input
                                     type="number"
                                     name="itemPrice"
@@ -155,18 +154,19 @@ const Purchase = () => {
                                     onChange={(event) => onChange(event, setPrice)}
                                 />
                             </div>
-                            <button type="submit" className="btn custom-button mt-3">
+                            <button type="submit" className="btn">
                                 Add item
                             </button>
                         </form>
+                        <Link to="/purchases" className="btn">
+                            Back to purchases
+                        </Link>
+                        <br></br>
                         <button type="button" className="btn btn-danger" onClick={deletePurchase}>
                             Delete Purchase
                         </button>
                     </div>
                 </div>
-                <Link to="/purchases" className="btn btn-link">
-                    Back to purchases
-                </Link>
             </div>
         </div>
     );

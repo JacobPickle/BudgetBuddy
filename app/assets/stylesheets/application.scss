@@ -14,3 +14,60 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .btn {
+    width: 25%;
+    background-color: lightgray;
+    border-color: black;
+    margin-top: 5px;
+ }
+
+ .btn:hover {
+    background-color: gray;
+ }
+
+ .btn-danger {
+    background-color: red;
+ }
+
+ .btn-danger:hover {
+    background-color: darkred;
+ }
+
+ .form-control {
+    width: 25%;
+ }
+
+ form {
+    margin-bottom: 20px;
+ }
+
+ .form-group label {
+    margin-top: 10px;
+ }
+
+ table {
+    border: 1px solid black;
+    width: 25%;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
+ td, th {
+    padding: 3px 2px;
+    border: 1px solid black;
+ }
+
+ tr:nth-child(even) {
+    background: #dadeff;
+ }
+
+ thead tr:first-child {
+    background:  #dadeff;
+ }
+
+ .purchase {
+    width: 50%;
+    text-align: center;
+ }

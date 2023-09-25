@@ -40,12 +40,12 @@ const NewStore = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row">
-                <div className="col-sm-12 col-lg-6 offset-lg-3">
-                    <h1 className="font-weight-normal mb-5">
-                        Add a new store to the database.
-                    </h1>
+        <div>
+            <div>
+                <div>
+                    <h3>
+                        Create a new store.
+                    </h3>
                     <form onSubmit={onSubmit}>
                         <div className="form-group">
                             <label htmlFor="storeName">Store name</label>
@@ -58,12 +58,16 @@ const NewStore = () => {
                                 onChange={(event) => onChange(event, setName)}
                             />
                         </div>
-                        <button type="submit" className="btn custom-button mt-3">
-                            Create store
-                        </button>
-                        <Link to="/" className="btn btn-link mt-3">
-                            Home
-                        </Link>
+                        <div>
+                            <button type="submit" className="btn">
+                                Create store
+                            </button>
+                        </div>
+                        <div>
+                            <Link to="/" className="btn">
+                                Home
+                            </Link>
+                        </div>
                     </form>
                 </div>
             </div>

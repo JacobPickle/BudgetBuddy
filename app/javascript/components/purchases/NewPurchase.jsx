@@ -59,12 +59,12 @@ const NewPurchase = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row">
-                <div className="col-sm-12 col-lg-6 offset-lg-3">
-                    <h1 className="font-weight-normal mb-5">
-                        Add a new purchase to the database.
-                    </h1>
+        <div>
+            <div>
+                <div>
+                    <h3>
+                        Log a new purchase.
+                    </h3>
                     <form onSubmit={onSubmit}>
                         <div className="form-group">
                             <label>Purchase total</label>
@@ -76,7 +76,6 @@ const NewPurchase = () => {
                                 required
                                 onChange={(event) => onChange(event, setTotal)}
                             />
-                            <br></br>
                             <label>Purchase Date</label>
                             <input
                                 type="date"
@@ -92,12 +91,16 @@ const NewPurchase = () => {
                                 {storeOptions}
                             </select>
                         </div>
-                        <button type="submit" className="btn custom-button mt-3">
-                            Create purchase
-                        </button>
-                        <Link to="/purchases" className="btn btn-link mt-3">
-                            Back to purchases
-                        </Link>
+                        <div>
+                            <button type="submit" className="btn">
+                                Create purchase
+                            </button>
+                        </div>
+                        <div>
+                            <Link to="/purchases" className="btn">
+                                Back to purchases
+                            </Link>
+                        </div> 
                     </form>
                 </div>
             </div>
