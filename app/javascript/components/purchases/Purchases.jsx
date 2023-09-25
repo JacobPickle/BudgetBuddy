@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const Purchases = () => {
     const navigate = useNavigate();
@@ -39,14 +40,15 @@ const Purchases = () => {
     
     return (
         <>
-            <div>
+            <Sidebar></Sidebar>
+            <div className="main">
                 <main>
                     <h3>Purchases</h3>
                     <div>
                         {purchases.length > 0 ? allPurchases : noPurchase}
                     </div>
                     <Link to="/purchase" className="btn">
-                        Create New Purchase
+                        Log New Purchase
                     </Link>
                     <Link to="/store" className="btn">
                         Create New Store

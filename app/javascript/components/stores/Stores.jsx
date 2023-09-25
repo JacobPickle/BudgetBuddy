@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const Stores = () => {
     const navigate = useNavigate();
@@ -19,19 +20,18 @@ const Stores = () => {
     }, []);
     
     const allStores = stores.map((store, index) => (
-        <div key={index} className="col-md-6 col-lg-4">
-          <div className="card mb-4">
-            <div className="card-body">
-                <h5 className="card-title">{store.name}</h5>
-                <Link to={`/store/${store.id}`} className="btn custom-button">
-                    View Store
+        <div key={index}>
+          <div>
+            <div>
+                <Link to={`/store/${store.id}`} className="btn">
+                    {store.name}
                 </Link>
             </div>
           </div>
         </div>
     ));
     const noStore = (
-        <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
+        <div>
             <h4>
                 No stores yet. Why not <Link to="/store">create one</Link>
             </h4>
@@ -40,19 +40,18 @@ const Stores = () => {
     
     return (
         <>
-            <div>
+            <Sidebar></Sidebar>
+            <div className="main">
+                <h3>Stores</h3>
                 <main>
                     <div>
                         {stores.length > 0 ? allStores : noStore}
                     </div>
-                    <div className="text-end mb-3">
-                        <Link to="/store" className="btn custom-button">
+                    <div>
+                        <Link to="/store" className="btn ">
                             Create New Store
                         </Link>
                     </div>
-                    <Link to="/" className="btn btn-link">
-                        Home
-                    </Link>
                 </main>
             </div>
         </>

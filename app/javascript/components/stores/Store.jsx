@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const Store = () => {
     const params = useParams();
@@ -47,16 +48,17 @@ const Store = () => {
   
     return (
         <div>
-            <div className="container py-5">
-                <div className="row">
-                    <div className="col-sm-12 col-lg-2">
-                        <p>{store.name}</p>
+            <Sidebar></Sidebar>
+            <div className="main">
+                <div>
+                    <div>
+                        <p>Store Name: {store.name}</p>
                         <button type="button" className="btn btn-danger" onClick={deleteStore}>
                             Delete Store
                         </button>
                     </div>
                 </div>
-                <Link to="/stores" className="btn btn-link">
+                <Link to="/stores" className="btn">
                     Back to stores
                 </Link>
             </div>

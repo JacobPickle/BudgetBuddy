@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const NewPurchase = () => {
     const navigate = useNavigate();
@@ -60,7 +61,8 @@ const NewPurchase = () => {
 
     return (
         <div>
-            <div>
+            <Sidebar></Sidebar>
+            <div className="main">
                 <div>
                     <h3>
                         Log a new purchase.
@@ -93,7 +95,7 @@ const NewPurchase = () => {
                         </div>
                         <div>
                             <button type="submit" className="btn">
-                                Create purchase
+                                Log purchase
                             </button>
                         </div>
                         <div>

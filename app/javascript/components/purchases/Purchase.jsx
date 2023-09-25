@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const Purchase = () => {
     const params = useParams();
@@ -116,7 +117,8 @@ const Purchase = () => {
   
     return (
         <div>
-            <div>
+            <Sidebar></Sidebar>
+            <div className="main">
                 <div>
                     <div>
                         <h4>Purchase</h4>

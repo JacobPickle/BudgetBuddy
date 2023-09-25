@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 const NewStore = () => {
     const navigate = useNavigate();
@@ -41,7 +42,8 @@ const NewStore = () => {
 
     return (
         <div>
-            <div>
+            <Sidebar></Sidebar>
+            <div className="main">
                 <div>
                     <h3>
                         Create a new store.
