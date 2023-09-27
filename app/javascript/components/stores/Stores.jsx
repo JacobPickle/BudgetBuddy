@@ -23,7 +23,7 @@ const Stores = () => {
         <div key={index}>
           <div>
             <div>
-                <Link to={`/store/${store.id}`} className="btn">
+                <Link to={`/store/${store.id}`} className="list-group-item list-group-item-action">
                     {store.name}
                 </Link>
             </div>
@@ -44,11 +44,11 @@ const Stores = () => {
             <div className="main">
                 <h3>Stores</h3>
                 <main>
-                    <div>
+                    <div className="list-group">
                         {stores.length > 0 ? allStores : noStore}
                     </div>
                     <div>
-                        <Link to="/store" className="btn ">
+                        <Link to="/store" className="btn btn-primary rounded-pill">
                             Create New Store
                         </Link>
                     </div>

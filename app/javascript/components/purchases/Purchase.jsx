@@ -156,15 +156,15 @@ const Purchase = () => {
                                     onChange={(event) => onChange(event, setPrice)}
                                 />
                             </div>
-                            <button type="submit" className="btn">
+                            <button type="submit" className="btn btn-primary rounded-pill">
                                 Add item
                             </button>
                         </form>
-                        <Link to="/purchases" className="btn">
+                        <Link to="/purchases" className="btn btn-secondary rounded-pill">
                             Back to purchases
                         </Link>
                         <br></br>
-                        <button type="button" className="btn btn-danger" onClick={deletePurchase}>
+                        <button type="button" className="btn btn-danger rounded-pill" onClick={deletePurchase}>
                             Delete Purchase
                         </button>
                     </div>

@@ -53,12 +53,12 @@ const Store = () => {
                 <div>
                     <div>
                         <p>Store Name: {store.name}</p>
-                        <button type="button" className="btn btn-danger" onClick={deleteStore}>
+                        <button type="button" className="btn btn-danger rounded-pill" onClick={deleteStore}>
                             Delete Store
                         </button>
                     </div>
                 </div>
-                <Link to="/stores" className="btn">
+                <Link to="/stores" className="btn btn-secondary rounded-pill">
                     Back to stores
                 </Link>
             </div>

@@ -61,12 +61,12 @@ const NewStore = () => {
                             />
                         </div>
                         <div>
-                            <button type="submit" className="btn">
+                            <button type="submit" className="btn btn-primary rounded-pill">
                                 Create store
                             </button>
                         </div>
                         <div>
-                            <Link to="/" className="btn">
+                            <Link to="/" className="btn btn-secondary rounded-pill">
                                 Home
                             </Link>
                         </div>

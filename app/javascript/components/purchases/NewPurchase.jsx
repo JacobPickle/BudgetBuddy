@@ -94,12 +94,12 @@ const NewPurchase = () => {
                             </select>
                         </div>
                         <div>
-                            <button type="submit" className="btn">
+                            <button type="submit" className="btn btn-primary rounded-pill">
                                 Log purchase
                             </button>
                         </div>
                         <div>
-                            <Link to="/purchases" className="btn">
+                            <Link to="/purchases" className="btn btn-secondary rounded-pill">
                                 Back to purchases
                             </Link>
                         </div> 

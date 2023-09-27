@@ -16,26 +16,12 @@
  @import "bootstrap";
 
  .btn {
-    width: 25%;
-    background-color: lightgray;
-    border-color: black;
+    width: 400px;
     margin-top: 5px;
  }
-
- .btn:hover {
-    background-color: gray;
- }
-
- .btn-danger {
-    background-color: red;
- }
-
- .btn-danger:hover {
-    background-color: darkred;
- }
-
+ 
  .form-control {
-    width: 25%;
+    width: 400px;
  }
 
  form {
@@ -48,7 +34,7 @@
 
  table {
     border: 1px solid black;
-    width: 25%;
+    width: 400px;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -67,19 +53,18 @@
     background:  #dadeff;
  }
 
- .purchase {
-    width: 50%;
-    text-align: center;
+ .list-group {
+   width: 400px;
  }
 
  .sidenav {
    height: 100%;
-   width: 160px;
+   width: 180px;
    position: fixed;
    z-index: 1;
    top: 0;
    left: 0;
-   background-color: #111;
+   background-color: #141416;
    overflow-x: hidden;
    padding-top: 20px;
  }
@@ -88,15 +73,15 @@
    padding: 6px 8px 6px 16px;
    text-decoration: none;
    font-size: 25px;
-   color: #818181;
+   color: #dadada;
    display: block;
  }
    
  .sidenav a:hover {
-   color: #f1f1f1;
+   color: #868686;
  }
 
  .main {
-   margin-left: 160px;
+   margin-left: 180px;
    padding: 0px 10px;
  }

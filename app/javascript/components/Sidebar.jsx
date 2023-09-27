@@ -5,9 +5,17 @@ class Sidebar extends React.Component {
     render() {
         return (
             <div className="sidenav">
-                <Link to="/" >Home</Link>
-                <Link to="/stores">Stores</Link>
-                <Link to="/store">New Store</Link>
+                <ul className="nav nav-pills">
+                    <li className="nav-item">
+                        <Link to="/" >Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/stores">Stores</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/store">New Store</Link>
+                    </li>
+                </ul>
             </div>
         );
     }
