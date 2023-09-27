@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Sidebar from "../Sidebar";
+import Sidebar from "./Sidebar";
 
-const Purchases = () => {
+const Home = () => {
     const navigate = useNavigate();
     const [purchases, setPurchases] = useState([]);
 
@@ -53,7 +53,7 @@ const Purchases = () => {
             <Sidebar></Sidebar>
             <div className="main">
                 <main>
-                    <h3>Purchases</h3>
+                    <h3>Home</h3>
                     <ul className="list-group">
                         {purchases.length > 0 ? allPurchases : noPurchase}
                     </ul>
@@ -73,4 +73,4 @@ const Purchases = () => {
     );
 };
   
-  export default Purchases;
+  export default Home;

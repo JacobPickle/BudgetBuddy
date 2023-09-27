@@ -10,10 +10,10 @@ class Sidebar extends React.Component {
                         <Link to="/" >Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/stores">Stores</Link>
+                        <Link to="/purchases" >Purchases</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/store">New Store</Link>
+                        <Link to="/stores">Stores</Link>
                     </li>
                 </ul>
             </div>
