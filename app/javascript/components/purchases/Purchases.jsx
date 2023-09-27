@@ -5,10 +5,15 @@ import Sidebar from "../Sidebar";
 const Purchases = () => {
     const navigate = useNavigate();
     const [purchases, setPurchases] = useState([]);
+    const [stores, setStores] = useState([]);
 
     useEffect(() => {
+        getPurchases();
+    }, []);
+
+    async function getPurchases(){
         const url = "/api/v1/purchases/index";
-        fetch(url)
+        await fetch(url)
           .then((res) => {
                 if (res.ok) {
                     return res.json();
@@ -17,14 +22,27 @@ const Purchases = () => {
           })
           .then((res) => setPurchases(res))
           .catch(() => navigate("/"));
-    }, []);
+
+        const storeurl = "/api/v1/stores/index";
+        await fetch(storeurl)
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            }
+            throw new Error("Network response was not ok.");
+          })
+          .then((res) => setStores(res))
+          .catch(() => navigate("/"));
+    };
     
     const allPurchases = purchases.map((purchase, index) => (
         <li key={index}>
             <Link to={`/purchase/${purchase.id}`} className="list-group-item d-flex justify-content-between">
                 <div>
                     <div>
-                        <h5>Store</h5>
+                        {stores.filter((element)=>element.id==purchase.store_id).map((store, index) => (
+                            <b key={index}>{store.name}</b>
+                        ))}
                     </div>
                     <div>
                         {purchase.purchase_date}

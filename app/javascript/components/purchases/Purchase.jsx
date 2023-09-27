@@ -9,10 +9,29 @@ const Purchase = () => {
     const [name, setName] = useState([]);
     const [price, setPrice] = useState([]);
     const [items, setItems] = useState([]);
+    const [stores, setStores] = useState([]);
 
     useEffect(() => {
+        getPurchase();
+    }, [params.id]);
+
+    async function getPurchase() {
         const url = `/api/v1/purchases/show/${params.id}`;
-        fetch(url)
+        await fetch(url)
+        .then((response) => {
+            if (response.ok) 
+            {
+                return response.json();
+            }
+            else 
+            {
+                throw new Error("Network response was not ok.");
+            }
+                
+         })
+        .then((response) => setPurchase(response))
+        .then(
+            fetch(`/api/v1/items/show_by_purchase/${params.id}`)
             .then((response) => {
                 if (response.ok) 
                 {
@@ -22,29 +41,26 @@ const Purchase = () => {
                 {
                     throw new Error("Network response was not ok.");
                 }
-                
-            })
-            .then((response) => setPurchase(response))
-            .then(
-                fetch(`/api/v1/items/show_by_purchase/${params.id}`)
-                    .then((response) => {
-                        if (response.ok) 
-                        {
-                            return response.json();
-                        }
-                        else 
-                        {
-                            throw new Error("Network response was not ok.");
-                        }
                         
-                    })
-                    .then((response) => {
-                        setItems(response)
-                    })
-                    .catch(() => navigate("/purchases"))
-            )
-            .catch(() => navigate("/purchases"));
-    }, [params.id]);
+            })
+            .then((response) => {
+                setItems(response)
+            })
+            .catch(() => navigate("/purchases"))
+        )
+        .catch(() => navigate("/purchases"));
+        
+        const storeurl = "/api/v1/stores/index";
+        await fetch(storeurl)
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+            throw new Error("Network response was not ok.");
+        })
+        .then((res) => setStores(res))
+        .catch(() => navigate("/"));
+    }
 
     const onChange = (event, setFunction) => {
         setFunction(event.target.value);
@@ -121,7 +137,9 @@ const Purchase = () => {
             <div className="main">
                 <div>
                     <div>
-                        <h4>Store Name Here</h4>
+                        {stores.filter((element)=>element.id==purchase.store_id).map((store, index) => (
+                            <h4 key={index}>{store.name}</h4>
+                        ))}
                         <div>
                             {purchase.purchase_date}
                         </div>
