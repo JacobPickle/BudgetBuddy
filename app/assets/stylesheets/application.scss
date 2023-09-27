@@ -15,9 +15,24 @@
  */
  @import "bootstrap";
 
+ $color-dark: #131436;
+ $color-medium: #4F84FF;
+ $color-light: #90B3F0;
+ $color-gray: #E8EDF3;
+
  .btn {
     width: 400px;
     margin-top: 5px;
+ }
+
+ .btn-primary {
+   background-color: $color-medium;
+   border-color: $color-medium;
+ }
+
+ .btn-secondary {
+   background-color: $color-light;
+   border-color: $color-light;
  }
  
  .form-control {
@@ -33,7 +48,7 @@
  }
 
  table {
-    border: 1px solid black;
+    border: 1px solid $color-dark;
     width: 400px;
     text-align: left;
     margin-top: 20px;
@@ -42,15 +57,15 @@
 
  td, th {
     padding: 3px 2px;
-    border: 1px solid black;
+    border: 1px solid $color-dark;
  }
 
  tr:nth-child(even) {
-    background: #dadeff;
+    background: $color-light;
  }
 
  thead tr:first-child {
-    background:  #dadeff;
+    background:  $color-light;
  }
 
  .list-group {
@@ -59,7 +74,7 @@
  }
 
  .list-group-item:hover {
-   background-color: lightblue;
+   background-color: $color-gray;
  }
 
  .sidenav {
@@ -69,7 +84,7 @@
    z-index: 1;
    top: 0;
    left: 0;
-   background-color: #141416;
+   background-color: $color-dark;
    overflow-x: hidden;
    padding-top: 20px;
  }
@@ -78,12 +93,12 @@
    padding: 6px 8px 6px 16px;
    text-decoration: none;
    font-size: 25px;
-   color: #dadada;
+   color: $color-light;
    display: block;
  }
    
  .sidenav a:hover {
-   color: #868686;
+   color: $color-medium;
  }
 
  .main {
