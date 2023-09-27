@@ -157,7 +157,9 @@ const Purchase = () => {
                         </table>
                         <form onSubmit={onSubmit}>
                             <div className="form-group">
-                                <h5>Add Item: </h5>
+                                <div>
+                                    <b>Add Item: </b>
+                                </div>
                                 <label>Name: </label>
                                 <input
                                     type="text"
