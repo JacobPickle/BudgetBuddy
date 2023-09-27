@@ -19,6 +19,11 @@
  $color-medium: #4F84FF;
  $color-light: #90B3F0;
  $color-gray: #E8EDF3;
+ $color-background: #EEEFF1;
+
+ body {
+  background-color: $color-background;
+ }
 
  .btn {
     width: 400px;
@@ -63,6 +68,10 @@
  tr:nth-child(even) {
     background: $color-gray;
  }
+
+ tr:nth-child(odd) {
+  background: white;
+}
 
  thead tr:first-child {
     background:  $color-gray;
