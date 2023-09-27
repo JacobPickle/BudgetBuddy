@@ -51,7 +51,7 @@ const Home = () => {
                         {dayjs(purchase.purchase_date).format('LL')}
                     </div>
                     <div>
-                        ${purchase.total}
+                        ${purchase.total.toFixed(2)}
                     </div>
                 </div>
                 <div>

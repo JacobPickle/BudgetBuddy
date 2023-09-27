@@ -127,7 +127,7 @@ const Purchase = () => {
                 {item.name}
             </td>
             <td>
-                ${item.price}
+                ${item.price.toFixed(2)}
             </td>
         </tr>
    ));
