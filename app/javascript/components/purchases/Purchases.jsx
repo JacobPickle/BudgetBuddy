@@ -94,4 +94,4 @@ const Purchases = () => {
     );
 };
   
-  export default Purchases;
+export default Purchases;

@@ -9,11 +9,15 @@ import NewPurchase from "../components/purchases/NewPurchase";
 import Items from "../components/items/Items";
 import Item from "../components/items/Item";
 import Home from "../components/Home";
+import About from "../components/About";
+import Resume from "../components/Resume";
 
 export default (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Resume" element={<Resume />} />
       <Route path="/stores" element={<Stores />} />
       <Route path="/store/:id" element={<Store />} />
       <Route path="/store" element={<NewStore />} />
