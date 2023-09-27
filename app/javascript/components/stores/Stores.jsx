@@ -20,15 +20,13 @@ const Stores = () => {
     }, []);
     
     const allStores = stores.map((store, index) => (
-        <div key={index}>
-          <div>
+        <li key={index}>
             <div>
-                <Link to={`/store/${store.id}`} className="list-group-item list-group-item-action">
+                <Link to={`/store/${store.id}`} className="list-group-item">
                     {store.name}
                 </Link>
             </div>
-          </div>
-        </div>
+        </li>
     ));
     const noStore = (
         <div>
@@ -44,9 +42,9 @@ const Stores = () => {
             <div className="main">
                 <h3>Stores</h3>
                 <main>
-                    <div className="list-group">
+                    <ul className="list-group">
                         {stores.length > 0 ? allStores : noStore}
-                    </div>
+                    </ul>
                     <div>
                         <Link to="/store" className="btn btn-primary rounded-pill">
                             Create New Store

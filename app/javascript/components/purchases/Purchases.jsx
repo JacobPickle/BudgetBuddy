@@ -20,11 +20,19 @@ const Purchases = () => {
     }, []);
     
     const allPurchases = purchases.map((purchase, index) => (
-        <div key={index}>
-            <Link to={`/purchase/${purchase.id}`} className="list-group-item list-group-item-action">
-                {purchase.purchase_date}
+        <li key={index}>
+            <Link to={`/purchase/${purchase.id}`} className="list-group-item">
+                <div>
+                    <h5>Store</h5>
+                </div>
+                <div>
+                    {purchase.purchase_date}
+                </div>
+                <div>
+                    ${purchase.total}
+                </div>
             </Link>
-        </div>
+        </li>
     ));
     const noPurchase = (
         <div>
@@ -40,9 +48,9 @@ const Purchases = () => {
             <div className="main">
                 <main>
                     <h3>Purchases</h3>
-                    <div className="list-group">
+                    <ul className="list-group">
                         {purchases.length > 0 ? allPurchases : noPurchase}
-                    </div>
+                    </ul>
                     <div>
                         <Link to="/purchase" className="btn btn-primary rounded-pill">
                             Log New Purchase

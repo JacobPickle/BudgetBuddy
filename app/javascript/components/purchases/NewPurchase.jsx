@@ -72,6 +72,7 @@ const NewPurchase = () => {
                             <label>Purchase total</label>
                             <input
                                 type="number"
+                                step='0.01'
                                 name="total"
                                 id="purchaseTotal"
                                 className="form-control"

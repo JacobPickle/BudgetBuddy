@@ -121,10 +121,13 @@ const Purchase = () => {
             <div className="main">
                 <div>
                     <div>
-                        <h4>Purchase</h4>
-                        <p><label>Date: </label> {purchase.purchase_date}</p>
-                        <p><label>Total: </label> ${purchase.total}</p>
-                        <p><label>Store ID: </label> {purchase.store_id}</p>
+                        <h4>Store Name Here</h4>
+                        <div>
+                            {purchase.purchase_date}
+                        </div>
+                        <div>
+                            <label>Total: </label> ${purchase.total}
+                        </div>
                         <table>
                             <thead>
                                 <tr>
@@ -149,6 +152,7 @@ const Purchase = () => {
                                 <label>Price: </label>
                                 <input
                                     type="number"
+                                    step="0.01"
                                     name="itemPrice"
                                     id="itemPrice"
                                     className="form-control"
