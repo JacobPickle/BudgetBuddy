@@ -108,7 +108,7 @@ const Purchase = () => {
                 {item.name}
             </td>
             <td>
-                {item.price}
+                ${item.price}
             </td>
         </tr>
    ));
