@@ -6,6 +6,9 @@ const Purchases = () => {
     const navigate = useNavigate();
     const [purchases, setPurchases] = useState([]);
     const [stores, setStores] = useState([]);
+    const dayjs = require('dayjs')
+    var localizedFormat = require('dayjs/plugin/localizedFormat')
+    dayjs.extend(localizedFormat)
 
     useEffect(() => {
         getPurchases();
@@ -45,7 +48,7 @@ const Purchases = () => {
                         ))}
                     </div>
                     <div>
-                        {purchase.purchase_date}
+                        {dayjs(purchase.purchase_date).format('LL')}
                     </div>
                     <div>
                         ${purchase.total}

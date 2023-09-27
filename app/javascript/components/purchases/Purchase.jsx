@@ -10,6 +10,9 @@ const Purchase = () => {
     const [price, setPrice] = useState([]);
     const [items, setItems] = useState([]);
     const [stores, setStores] = useState([]);
+    const dayjs = require('dayjs')
+    var localizedFormat = require('dayjs/plugin/localizedFormat')
+    dayjs.extend(localizedFormat)
 
     useEffect(() => {
         getPurchase();
@@ -141,7 +144,7 @@ const Purchase = () => {
                             <h4 key={index}>{store.name}</h4>
                         ))}
                         <div>
-                            {purchase.purchase_date}
+                            {dayjs(purchase.purchase_date).format('LL')}
                         </div>
                         <div>
                             <label>Total: </label> ${purchase.total}
