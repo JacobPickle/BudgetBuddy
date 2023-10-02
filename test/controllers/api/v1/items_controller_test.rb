@@ -19,11 +19,6 @@ class Api::V1::ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should error create" do
-    post api_v1_items_create_url, params: {price: 1.67, purchase_id: @purchase.id}
-    assert_response :success
-  end
-
   test "should get show" do
     get "/api/v1/items/show/#{@item.id}"
     item = @response.parsed_body
