@@ -112,6 +112,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    docile (1.4.0)
     erubi (1.12.0)
     execjs (2.9.1)
     ffi (1.15.5)
@@ -219,6 +220,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -276,6 +283,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   rails-settings-cached (~> 2.9)
   selenium-webdriver
+  simplecov
   sprockets-rails
   sshkit-sudo
   stimulus-rails
