@@ -12,12 +12,12 @@ class Api::V1::StoresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get api_v1_stores_show_url
+    get '/stores/show/0'
     assert_response :success
   end
 
   test "should get destroy" do
-    get api_v1_stores_destroy_url
+    get '/stores/destroy/0'
     assert_response :success
   end
 end
