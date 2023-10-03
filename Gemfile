@@ -66,10 +66,16 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
+  gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
   gem "selenium-webdriver"
   gem 'simplecov', require: false
 end
+
+gem 'rubocop'
 
 gem "rails-settings-cached", "~> 2.9"
 

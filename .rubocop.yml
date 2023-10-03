@@ -1,0 +1,12 @@
+# .rubocop.yml
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "db/schema.rb"
+    - "Gemfile"
+    - "lib/tasks/*.rake"
+    - "bin/*"
+    - "config/puma.rb"
+    - "config/environments/development.rb"
+    - "config/environments/production.rb"
+    - "spec/spec_helper.rb"
