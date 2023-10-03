@@ -1,4 +1,10 @@
 # .rubocop.yml
+Metrics/BlockLength:
+    Enabled: false
+
+Style/Documentation:
+    Enabled: false
+
 AllCops:
   NewCops: enable
   Exclude:
