@@ -19,7 +19,7 @@ describe Api::V1::StoresController do
   end
 
   describe 'GET store' do
-    subject(:store) { Store.create({ name: 'Hyvee' }) }
+    subject(:store) { create :store }
 
     it 'returns a success response' do
       get :show, params: { id: store.id }
@@ -35,8 +35,8 @@ describe Api::V1::StoresController do
 
   describe 'GET index' do
     before(:each) do
-      Store.create({ name: 'Hyvee' })
-      Store.create({ name: 'Aldi' })
+      create :store, name: 'Aldi'
+      create :store, name: 'Hyvee'
     end
 
     before(:each) do
@@ -54,7 +54,7 @@ describe Api::V1::StoresController do
   end
 
   describe 'DELETE destroy' do
-    subject(:store) { Store.create({ name: 'Hyvee' }) }
+    subject(:store) { create :store, name: 'Hyvee' }
     before(:each) do
       delete :destroy, params: { id: store.id }
     end

@@ -5,8 +5,8 @@ require 'rails_helper'
 describe Api::V1::ItemsController do
   describe 'POST create' do
     before(:each) do
-      store = Store.create({ name: 'Hyvee' })
-      purchase = Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
+      store = create :store, name: 'Hyvee'
+      purchase = create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
       post :create, params: { name: 'hotdogs', price: 1.99, purchase_id: purchase.id }
     end
 
@@ -27,9 +27,9 @@ describe Api::V1::ItemsController do
 
   describe 'GET item' do
     subject(:item) do
-      store = Store.create({ name: 'Hyvee' })
-      purchase = Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
-      Item.create({ name: 'hotdogs', price: 1.99, purchase_id: purchase.id })
+      store = create :store,  name: 'Hyvee'
+      purchase = create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
+      create :item, name: 'hotdogs', price: 1.99, purchase_id: purchase.id
     end
 
     before(:each) do
@@ -53,9 +53,9 @@ describe Api::V1::ItemsController do
 
   describe 'GET item by purchase id' do
     subject(:item) do
-      store = Store.create({ name: 'Hyvee' })
-      purchase = Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
-      Item.create({ name: 'hotdogs', price: 1.99, purchase_id: purchase.id })
+      store = create :store, name: 'Hyvee'
+      purchase = create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
+      create :item, name: 'hotdogs', price: 1.99, purchase_id: purchase.id
     end
 
     before(:each) do
@@ -79,12 +79,12 @@ describe Api::V1::ItemsController do
 
   describe 'GET index' do
     before(:each) do
-      store1 = Store.create({ name: 'Hyvee' })
-      store2 = Store.create({ name: 'Aldi' })
-      purchase1 = Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store1.id })
-      purchase2 = Purchase.create({ purchase_date: Date.current, total: 3.29, store_id: store2.id })
-      Item.create({ name: 'hotdogs', price: 1.99, purchase_id: purchase1.id })
-      Item.create({ name: 'buns', price: 2.75, purchase_id: purchase2.id })
+      store1 = create :store,  name: 'Hyvee'
+      store2 = create :store,  name: 'Aldi'
+      purchase1 = create :purchase, purchase_date: Date.current, total: 5.99, store_id: store1.id
+      purchase2 = create :purchase, purchase_date: Date.current, total: 3.29, store_id: store2.id
+      create :item, name: 'hotdogs', price: 1.99, purchase_id: purchase1.id
+      create :item, name: 'buns', price: 2.57, purchase_id: purchase2.id
     end
 
     it 'returns a success response' do
@@ -101,9 +101,9 @@ describe Api::V1::ItemsController do
 
   describe 'DELETE destroy' do
     subject(:item) do
-      store = Store.create({ name: 'Hyvee' })
-      purchase = Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
-      Item.create({ name: 'hotdogs', price: 1.99, purchase_id: purchase.id })
+      store = create :store, name: 'Hyvee'
+      purchase = create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
+      create :item, name: 'hotdogs', price: 1.99, purchase_id: purchase.id
     end
 
     before(:each) do

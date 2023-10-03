@@ -5,7 +5,7 @@ require 'rails_helper'
 describe Api::V1::PurchasesController do
   describe 'POST create' do
     before(:each) do
-      store = Store.create({ name: 'Hyvee' })
+      store = create :store, name: 'Hyvee'
       post :create, params: { purchase_date: Date.current, total: 5.99, store_id: store.id }
     end
 
@@ -26,8 +26,8 @@ describe Api::V1::PurchasesController do
 
   describe 'GET purchase' do
     subject(:purchase) do
-      store = Store.create({ name: 'Hyvee' })
-      Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
+      store = create :store, name: 'Hyvee'
+      create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
     end
 
     before(:each) do
@@ -51,10 +51,10 @@ describe Api::V1::PurchasesController do
 
   describe 'GET index' do
     before(:each) do
-      store1 = Store.create({ name: 'Hyvee' })
-      store2 = Store.create({ name: 'Aldi' })
-      Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store1.id })
-      Purchase.create({ purchase_date: Date.current, total: 3.29, store_id: store2.id })
+      store1 = create :store, name: 'Hyvee'
+      store2 = create :store, name: 'Aldi'
+      create :purchase, purchase_date: Date.current, total: 2.57, store_id: store1.id
+      create :purchase, purchase_date: Date.current, total: 1.99, store_id: store2.id
     end
 
     it 'returns a success response' do
@@ -71,8 +71,8 @@ describe Api::V1::PurchasesController do
 
   describe 'DELETE destroy' do
     subject(:purchase) do
-      store = Store.create({ name: 'Hyvee' })
-      Purchase.create({ purchase_date: Date.current, total: 5.99, store_id: store.id })
+      store = create :store, name: 'Hyvee'
+      create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
     end
 
     before(:each) do
