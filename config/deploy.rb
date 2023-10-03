@@ -1,30 +1,32 @@
-# Change these
-server '143.198.145.223', port: 22, roles: [:web, :app, :db], primary: true
+# frozen_string_literal: true
 
-set :repo_url,        'git@github.com:JacobPickle/BudgetBuddy.git'
+# Change these
+server '143.198.145.223', port: 22, roles: %i[web app db], primary: true
+
+set :repo_url, 'git@github.com:JacobPickle/BudgetBuddy.git'
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :application,     'BudgetBuddy'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set :linked_files, %w{config/master.key}
+set :linked_files, %w[config/master.key]
 
 # Don't change these unless you know what you're doing
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
-set :rails_env,       "production"
+set :rails_env,       'production'
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
-set :puma_bind,       "unix:///home/deploy/apps/BudgetBuddy/shared/tmp/sockets/puma.sock" 
-set :puma_state,      "/home/deploy/apps/BudgetBuddy/shared/tmp/pids/puma.state" 
-set :puma_pid,        "/home/deploy/apps/BudgetBuddy/shared/tmp/pids/puma.pid" 
-set :puma_access_log, "/home/deploy/apps/BudgetBuddy/current/log/puma.access.log"
-set :puma_error_log,  "/home/deploy/apps/BudgetBuddy/current/log/puma.error.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :puma_bind,       'unix:///home/deploy/apps/BudgetBuddy/shared/tmp/sockets/puma.sock'
+set :puma_state,      '/home/deploy/apps/BudgetBuddy/shared/tmp/pids/puma.state'
+set :puma_pid,        '/home/deploy/apps/BudgetBuddy/shared/tmp/pids/puma.pid'
+set :puma_access_log, '/home/deploy/apps/BudgetBuddy/current/log/puma.access.log'
+set :puma_error_log,  '/home/deploy/apps/BudgetBuddy/current/log/puma.error.log'
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w[~/.ssh/id_rsa.pub] }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
-set :puma_init_active_record, true  # Change to false when not using ActiveRecord
+set :puma_init_active_record, true # Change to false when not using ActiveRecord
 
 ## Defaults:
 # set :scm,           :git
@@ -50,12 +52,12 @@ namespace :puma do
 end
 
 namespace :deploy do
-  desc "Make sure local git is in sync with remote."
+  desc 'Make sure local git is in sync with remote.'
   task :check_revision do
     on roles(:app) do
       unless `git rev-parse HEAD` == `git rev-parse origin/main`
-        puts "WARNING: HEAD is not the same as origin/main"
-        puts "Run `git push` to sync changes."
+        puts 'WARNING: HEAD is not the same as origin/main'
+        puts 'Run `git push` to sync changes.'
         exit
       end
     end
