@@ -12,51 +12,50 @@ const Resume = () => {
                 <br></br>
                 <h5>Experience</h5>
                 <b>Personal Project: BudgetBuddy</b>
-                <p>
-                    <div>I created BudgetBuddy to track my grocery spending and get some experience with rails and react.</div>
+                <div>
+                    <div>I created BudgetBuddy to track my grocery spending and get some experience with Ruby on Rails and React.</div>
                     <div>Technologies: Ruby on Rails, React, Bootstrap, Capistrano</div>
-                </p>
+                </div>
                 <ul>
-                    <li>React front end with a ruby on rails backend</li>
-                    <li>Bootstrap used to make the site more user friendly</li>
+                    <li>React front end with a Ruby on Rails backend</li>
+                    <li>Used Bootstrap to make the site more user friendly</li>
                     <li>Deployment to a remote server with capistrano</li>
-                    <li>Used figma to create a design and matched that design in code</li>
+                    <li>Used Figma to brainstorm a design to learn how to translate a given design to a matching frontend</li>
                 </ul>
                 <b>Cerner</b>
                 <div><small>Jun 2019 - Oct 2022</small></div>
-                <p>
+                <div>
                     <div>Orders and Plans Team</div>
                     <div>Technologies: C++, Java, CCL, SQL</div>
-                </p>
+                </div>
                 <ul>
-                    <li>Designed and built user friendly frontends for electronic health records using C++</li>
-                    <li>Improved functionality of Java REST services and implemented new features to translate data from the database structure into usable data for the frontend</li>
-                    <li>Wrote technical documentation for new features</li>
-                    <li>Wrote unit tests to ensure stability and completeness of Java code</li>
-                    <li>Debugged complex legacy code using SQL/CCL</li>
-                    <li>Wrote automated test using Eggplant tools</li>
-                    <li>Remotely mentored for the new employee program</li>
-                    <li>Worked as part of an agile team following daily scrum practices</li>
-                    <li>Worked remotely collaborating with video calls and code reviews over Microsoft and Atlassian toolsets</li>
+                    <li>Worked as part of an Agile team following Scrum practices including standup, retrospectives, sprint reviews, and ticket refinement</li>
+                    <li>Created technical documentation for, designed, and built user friendly frontends for electronic health records using C++</li>
+                    <li>Improved functionality of Java REST services and implemented new features</li>
+                    <li>Debugged complex legacy code using SQL and CCL, an in-house language</li>
+                    <li>Ensured stability and completeness of Java code using unit tests</li>
+                    <li>Automated frontend testing using Eggplant</li>
                     <li>Operated as part of the release pipeline for features that I owned</li>
                     <li>Helped maintain a Jenkins build for projects my team owned</li>
+                    <li>Remotely mentored for DevAcademy, the new employee program</li>
+                    <li>Worked remotely collaborating using video calls and code reviews over Microsoft and Atlassian toolsets</li>
                 </ul>
-                <p>
+                <div>
                     <div>Dev Academy Team</div>
                     <div>Technologies: Ruby on Rails, React, Jest</div>
-                </p>
+                </div>
                 <ul>
-                    <li>Worked with other new engineers on an internal project to match new hires to projects</li>
-                    <li>Learned new technologies with access to a lot of mentoring and feedback</li>
-                    <li>Followed scrum practices used throughout cerner</li>
-                    <li>Required to have high test coverage in every PR</li>
+                    <li>Worked alongside other new hires to Cerner on an internal project to match new hires like us to DevAcademy projects upon their start in the program</li>
+                    <li>Learned to get and give constructive feedback with daily code reviews with my team and weekly scoring by my mentors</li>
+                    <li>Followed Scrum practices including standups, sprint reviews, and retrospectives</li>
+                    <li>Required to have high test coverage on every feature</li>
                 </ul>
-                <p>
+                <div>
                     <div>Internships: Document Imaging Team</div>
                     <div>Technologies: C++</div>
-                </p>
+                </div>
                 <ul>
-                    <li>I worked two summer interships on the Document Imaging team at cerner for two summers during university before being hired full time</li>
+                    <li>Two summer internships during university before being hired full time</li>
                 </ul>
                 <h5>Education</h5>
                 <b>Missouri University of Science and Technology</b>
