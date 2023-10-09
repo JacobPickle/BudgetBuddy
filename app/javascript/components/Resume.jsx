@@ -14,6 +14,7 @@ const Resume = () => {
                 <b>Personal Project: BudgetBuddy</b>
                 <div>
                     <div>I created BudgetBuddy to track my grocery spending and get some experience with Ruby on Rails and React.</div>
+                    <div>Code Available Here: <a href="https://github.com/JacobPickle/BudgetBuddy">https://github.com/JacobPickle/BudgetBuddy</a></div>
                     <div>Technologies: Ruby on Rails, React, Bootstrap, Capistrano</div>
                 </div>
                 <ul>
