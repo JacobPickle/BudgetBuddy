@@ -10,6 +10,11 @@ module Api
         render json: purchases
       end
 
+      def recent
+        purchases = Purchase.where(:purchase_date => (Setting.weeks).week.ago).order(created_at: :desc)
+        render json: purchases
+      end
+
       def create
         purchase = Purchase.create!(purchase_params)
         if purchase

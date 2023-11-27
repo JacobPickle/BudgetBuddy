@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'purchases/index'
+      get 'purchases/recent'
       post 'purchases/create'
       get 'purchases/show/:id', to: 'purchases#show'
       delete 'purchases/destroy/:id', to: 'purchases#destroy'

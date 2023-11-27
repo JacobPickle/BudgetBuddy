@@ -10,7 +10,7 @@ const Home = () => {
             <div className="main">
                 <main>
                     <h3>Home</h3>
-                    <PurchaseList></PurchaseList>
+                    <PurchaseList recent="true"></PurchaseList>
                     <div>
                         <Link to="/purchase" className="btn btn-primary rounded-pill">
                             Log New Purchase

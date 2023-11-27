@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const PurchaseList = () => {
+const PurchaseList = ({recent}) => {
     const navigate = useNavigate();
     const [purchases, setPurchases] = useState([]);
     const [stores, setStores] = useState([]);
@@ -14,7 +14,13 @@ const PurchaseList = () => {
     }, []);
 
     async function getPurchases(){
-        const url = "/api/v1/purchases/index";
+        url = "";
+        if(recent) {
+            url = "/api/v1/purchases/recent";
+        }
+        else {
+            url = "/api/v1/purchases/index";
+        }
         await fetch(url)
           .then((res) => {
                 if (res.ok) {
