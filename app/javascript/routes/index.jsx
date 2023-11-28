@@ -11,6 +11,7 @@ import Item from "../components/items/Item";
 import Home from "../components/Home";
 import About from "../components/About";
 import Resume from "../components/Resume";
+import Settings from "../components/Settings";
 
 export default (
   <Router>
@@ -26,6 +27,7 @@ export default (
       <Route path="/purchase" element={<NewPurchase />} />
       <Route path="/items" element={<Items />} />
       <Route path="/item/:id" element={<Item />} />
+      <Route path="/settings/" element={<Settings />} />
     </Routes>
   </Router>
 );

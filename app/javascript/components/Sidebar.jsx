@@ -16,6 +16,9 @@ class Sidebar extends React.Component {
                         <Link to="/stores">Stores</Link>
                     </li>
                     <li className="nav-item">
+                        <Link to="/Settings" >Settings</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to="/Resume" >My Resume</Link>
                     </li>
                 </ul>

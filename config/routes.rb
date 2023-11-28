@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       get 'items/show/:id', to: 'items#show'
       get 'items/show_by_purchase/:purchase_id', to: 'items#show_by_purchase_id'
       delete 'items/destroy/:id', to: 'items#destroy'
+      get 'settings/weeks', to: 'settings#weeks'
+      get 'settings/budget', to: 'settings#budget'
+      post 'settings/create'
     end
   end
   root 'homepage#index'

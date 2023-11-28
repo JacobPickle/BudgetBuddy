@@ -11,7 +11,7 @@ module Api
       end
 
       def recent
-        purchases = Purchase.where(:purchase_date => (Setting.weeks).week.ago).order(created_at: :desc)
+        purchases = Purchase.where(:purchase_date => (Setting.weeks).week.ago..DateTime.now).order(created_at: :desc)
         render json: purchases
       end
 
