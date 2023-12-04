@@ -25,6 +25,15 @@
   background-color: $color-background;
  }
 
+ .organization {
+    border: none;
+    background-color: $color-background;
+    vertical-align: top;
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
  .btn {
     width: 400px;
     margin-top: 15px;

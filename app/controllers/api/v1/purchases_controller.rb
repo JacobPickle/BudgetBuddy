@@ -10,6 +10,16 @@ module Api
         render json: purchases
       end
 
+      def recent
+        purchases = Purchase.where(:purchase_date => (Setting.weeks).week.ago..DateTime.now).order(created_at: :desc)
+        render json: purchases
+      end
+
+      def recent_total
+        purchase_total = Purchase.where(:purchase_date => (Setting.weeks).week.ago..DateTime.now).sum(:total)
+        render json: purchase_total
+      end
+
       def create
         purchase = Purchase.create!(purchase_params)
         if purchase

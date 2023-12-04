@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'purchases/index'
+      get 'purchases/recent'
+      get 'purchases/recent_total'
       post 'purchases/create'
       get 'purchases/show/:id', to: 'purchases#show'
       delete 'purchases/destroy/:id', to: 'purchases#destroy'
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
       get 'items/show/:id', to: 'items#show'
       get 'items/show_by_purchase/:purchase_id', to: 'items#show_by_purchase_id'
       delete 'items/destroy/:id', to: 'items#destroy'
+      get 'settings/weeks', to: 'settings#weeks'
+      get 'settings/budget', to: 'settings#budget'
+      post 'settings/create'
     end
   end
   root 'homepage#index'
