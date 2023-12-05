@@ -30,7 +30,7 @@ module Api
       private
 
       def store_params
-        params.permit(:name)
+        params.permit(:name, :store_type_id)
       end
 
       def set_store
