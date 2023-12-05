@@ -12,6 +12,9 @@ import Home from "../components/Home";
 import About from "../components/About";
 import Resume from "../components/Resume";
 import Settings from "../components/Settings";
+import StoreTypes from "../components/store_types/StoreTypes"
+import StoreType from "../components/store_types/StoreType"
+import NewStoreType from "../components/store_types/NewStoreType"
 
 export default (
   <Router>
@@ -22,6 +25,9 @@ export default (
       <Route path="/stores" element={<Stores />} />
       <Route path="/store/:id" element={<Store />} />
       <Route path="/store" element={<NewStore />} />
+      <Route path="/store_types" element={<StoreTypes />} />
+      <Route path="/store_type/:id" element={<StoreType />} />
+      <Route path="/store_type" element={<NewStoreType />} />
       <Route path="/purchases" element={<Purchases />} />
       <Route path="/purchase/:id" element={<Purchase />} />
       <Route path="/purchase" element={<NewPurchase />} />
