@@ -6,6 +6,7 @@ const Store = () => {
     const params = useParams();
     const navigate = useNavigate();
     const [store, setStore] = useState([]);
+    const [storeTypes, setStoreTypes] = useState([]);
 
     useEffect(() => {
         const url = `/api/v1/stores/show/${params.id}`;
@@ -23,6 +24,17 @@ const Store = () => {
             })
             .then((response) => setStore(response))
             .catch(() => navigate("/stores"));
+
+        const type_url = "/api/v1/store_types/index";
+        fetch(type_url)
+            .then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+                throw new Error("Network response was not ok.");
+            })
+            .then((res) => setStoreTypes(res))
+            .catch(() => navigate("/"));
     }, [params.id]);
 
     const deleteStore = () => {
@@ -53,6 +65,9 @@ const Store = () => {
                 <div>
                     <div>
                         <p>Store Name: {store.name}</p>
+                        {storeTypes.filter((element)=>element.id==store.store_type_id).map((storeType, index) => (
+                            <p key={index}>Store type: {storeType.name}</p>
+                        ))}
                         <button type="button" className="btn btn-danger rounded-pill" onClick={deleteStore}>
                             Delete Store
                         </button>
