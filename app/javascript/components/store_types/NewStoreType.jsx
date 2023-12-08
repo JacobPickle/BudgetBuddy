@@ -36,7 +36,7 @@ const NewStoreType = () => {
             }
             throw new Error("Network response was not ok.");
         })
-        .then((response) => navigate(`/store_type/${response.id}`))
+        .then((response) => navigate(`/store`))
         .catch((error) => console.log(error.message));
     };
 

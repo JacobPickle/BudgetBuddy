@@ -89,10 +89,15 @@ const NewPurchase = () => {
                                 onChange={(event) => onChange(event, setPurchaseDate)}
                             />
                             <label>Store</label>
-                            <select className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChange(event, setStore)}>
-                                <option value="DEFAULT" disabled>Choose a store</option>
-                                {storeOptions}
-                            </select>
+                            <div>
+                                <select style={{display: "inline-block"}} className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChange(event, setStore)}>
+                                    <option value="DEFAULT" disabled>Choose a store</option>
+                                    {storeOptions}
+                                </select>
+                                <Link to="/store" style={{width: 50, display: "inline-block"}} className="btn btn-secondary rounded-pill">
+                                    +
+                                </Link>
+                            </div>
                         </div>
                         <div>
                             <button type="submit" className="btn btn-primary rounded-pill">

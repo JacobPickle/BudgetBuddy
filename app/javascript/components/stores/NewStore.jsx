@@ -56,7 +56,7 @@ const NewStore = () => {
             }
             throw new Error("Network response was not ok.");
         })
-        .then((response) => navigate(`/store/${response.id}`))
+        .then((response) => navigate(`/purchase`))
         .catch((error) => console.log(error.message));
     };
 
@@ -80,10 +80,15 @@ const NewStore = () => {
                                 onChange={(event) => onChange(event, setName)}
                             />
                             <label htmlFor="storeTypeName">Store type</label>
-                            <select className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChange(event, setStoreType)}>
-                                <option value="DEFAULT" disabled>Choose a store type</option>
-                                {storeTypeOptions}
-                            </select>
+                            <div>
+                                <select style={{display: "inline-block"}} className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChange(event, setStoreType)}>
+                                    <option value="DEFAULT" disabled>Choose a store type</option>
+                                    {storeTypeOptions}
+                                </select>
+                                <Link to="/store_type" style={{width: 50, display: "inline-block"}} className="btn btn-secondary rounded-pill">
+                                        +
+                                </Link>
+                            </div>
                         </div>
                         <div>
                             <button type="submit" className="btn btn-primary rounded-pill">

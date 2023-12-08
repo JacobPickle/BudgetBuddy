@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const Settings = () => {
@@ -118,6 +118,12 @@ const Settings = () => {
                             </button>
                         </div>
                     </form>
+                    <div>
+                        <Link to="/stores" className="btn btn-secondary rounded-pill">Stores</Link>
+                    </div>
+                    <div>
+                        <Link to="/store_types" className="btn btn-secondary rounded-pill">Store Types</Link>
+                    </div>
                 </main>
             </div>
         </>

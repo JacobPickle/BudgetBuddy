@@ -13,12 +13,6 @@ class Sidebar extends React.Component {
                         <Link to="/purchases" >Purchases</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/stores">Stores</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/store_types">Store Types</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link to="/Settings" >Settings</Link>
                     </li>
                     <li className="nav-item">
