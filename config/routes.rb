@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'purchases/recent_total'
       post 'purchases/create'
       get 'purchases/show/:id', to: 'purchases#show'
+      get 'purchases/show_by_store/:store_id', to: 'purchases#show_by_store_id'
       delete 'purchases/destroy/:id', to: 'purchases#destroy'
       get 'store_types/index'
       post 'store_types/create'
