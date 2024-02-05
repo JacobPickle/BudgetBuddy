@@ -3,13 +3,14 @@
 grocery = StoreType.create(name: 'Grocery')
 pet = StoreType.create(name: 'Pet')
 fast_food = StoreType.create(name: 'Fast Food')
+general = StoreType.create(name: 'General')
 
 hyvee = Store.create(name: 'Hyvee', store_type: grocery)
 aldi = Store.create(name: 'ALDI', store_type: grocery)
 price_chopper = Store.create(name: 'Price Chopper', store_type: grocery)
 petsmart = Store.create(name: 'Petsmart', store_type: pet)
-target = Store.create(name: 'Target')
-dollar_tree = Store.create(name: 'Dollar Tree')
+target = Store.create(name: 'Target', store_type: general)
+dollar_tree = Store.create(name: 'Dollar Tree', store_type: general)
 tacobell = Store.create(name: 'Taco Bell', store_type: fast_food)
 imos = Store.create(name: "Imo's", store_type: fast_food)
 
@@ -75,12 +76,15 @@ purch = Purchase.create(purchase_date: 2.weeks.ago, total: 23.54, store: tacobel
 Item.create(name: 'tacos', price: 15.22, purchase: purch)
 Item.create(name: 'tacos', price: 2.99, purchase: purch)
 
-purch = Purchase.create(purchase_date: 2.weeks.ago, total: 42.84, store: petsmart)
+purch = Purchase.create(purchase_date: 1.weeks.ago, total: 42.84, store: petsmart)
+Item.create(name: 'Dog Food', price: 39.22, purchase: purch)
+
+purch = Purchase.create(purchase_date: 5.weeks.ago, total: 42.84, store: petsmart)
 Item.create(name: 'Dog Food', price: 39.22, purchase: purch)
 
 purch = Purchase.create(purchase_date: Date.current, total: 23.54, store: imos)
 Item.create(name: 'pizza', price: 21.23, purchase: purch)
 
-purch = Purchase.create(purchase_date: 1.weeks.ago, total: 33.54, store: tacobell)
+purch = Purchase.create(purchase_date: 5.weeks.ago, total: 33.54, store: tacobell)
 Item.create(name: 'tacos', price: 25.22, purchase: purch)
 Item.create(name: 'tacos', price: 2.99, purchase: purch)
