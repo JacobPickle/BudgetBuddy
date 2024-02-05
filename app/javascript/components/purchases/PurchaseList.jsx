@@ -72,16 +72,29 @@ const PurchaseList = ({recent}) => {
         <option key={index} value={storeType.id}>{storeType.name}</option>
     )) : <option></option>;
 
-    const onChangeStore = (event, setFunction) => {
-        setFilteredPurchases(purchases.filter(purchase => purchase.store_id == event.target.value));
-        setFunction(event.target.value);
+    const onChangeStore = (event) => {
+        if(event.target.value=="DEFAULT"){
+            setFilteredPurchases(purchases);
+        }
+        else{
+            setFilteredPurchases(purchases.filter(purchase => purchase.store_id == event.target.value));
+        }
+        setStoreTypeFilter("DEFAULT");
+        setStoreFilter(event.target.value);
     };
 
-    const onChangeStoreType = (event, setFunction) => {
-        filteredStores = stores.filter(store => store.store_type_id == event.target.value);
-        filteredStoreIds = filteredStores.map(store => store.id);
-        setFilteredPurchases(purchases.filter(purchase => filteredStoreIds.includes(purchase.store_id)));
-        setFunction(event.target.value);
+    const onChangeStoreType = (event) => {
+        if(event.target.value=="DEFAULT"){
+            setFilteredPurchases(purchases);
+        }
+        else{
+            filteredStores = stores.filter(store => store.store_type_id == event.target.value);
+            filteredStoreIds = filteredStores.map(store => store.id);
+            setFilteredPurchases(purchases.filter(purchase => filteredStoreIds.includes(purchase.store_id)));
+        }
+        
+        setStoreFilter("DEFAULT");
+        setStoreTypeFilter(event.target.value);
     };
     
     const allPurchases = filteredPurchases.map((purchase, index) => (
@@ -118,12 +131,12 @@ const PurchaseList = ({recent}) => {
     return (
         <div>
             <form>
-                <select className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChangeStore(event, setStoreFilter)}>
-                    <option value="DEFAULT" disabled>Choose a store filter</option>
+                <select className="form-select form-control" defaultValue={'DEFAULT'} value={storeFilter} onChange={(event) => onChangeStore(event)}>
+                    <option value="DEFAULT">Choose a store filter</option>
                     {storeOptions}
                 </select>
-                <select className="form-control" defaultValue={'DEFAULT'} onChange={(event) => onChangeStoreType(event, setStoreTypeFilter)}>
-                    <option value="DEFAULT" disabled>Choose a store type filter</option>
+                <select className="form-select form-control" defaultValue={'DEFAULT'} value={storeTypeFilter} onChange={(event) => onChangeStoreType(event)}>
+                    <option value="DEFAULT">Choose a store type filter</option>
                     {storeTypeOptions}
                 </select>
             </form>
