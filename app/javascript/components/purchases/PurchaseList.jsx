@@ -79,7 +79,8 @@ const PurchaseList = ({recent}) => {
 
     const onChangeStoreType = (event, setFunction) => {
         filteredStores = stores.filter(store => store.store_type_id == event.target.value);
-        setFilteredPurchases(purchases.filter(purchase => purchase.store_id == event.target.value));
+        filteredStoreIds = filteredStores.map(store => store.id);
+        setFilteredPurchases(purchases.filter(purchase => filteredStoreIds.includes(purchase.store_id)));
         setFunction(event.target.value);
     };
     
