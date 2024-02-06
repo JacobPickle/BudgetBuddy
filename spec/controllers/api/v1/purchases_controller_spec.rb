@@ -49,6 +49,31 @@ describe Api::V1::PurchasesController do
     end
   end
 
+  describe 'GET purchase by store id' do
+    subject(:purchase) do
+      store = create :store, name: 'Hyvee'
+      create :purchase, purchase_date: Date.current, total: 5.99, store_id: store.id
+    end
+
+    before(:each) do
+      get :show_by_store_id, params: { store_id: purchase.store_id }
+    end
+
+    it 'returns a success response' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'returns the correct total' do
+      response_purchase = response.parsed_body
+      expect(response_purchase[0]['total']).to eq purchase.total
+    end
+
+    it 'returns the correct date' do
+      response_purchase = response.parsed_body
+      expect(Date.parse(response_purchase[0]['purchase_date'])).to eq Date.current
+    end
+  end
+
   describe 'GET index' do
     before(:each) do
       store1 = create :store, name: 'Hyvee'

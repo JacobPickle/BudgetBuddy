@@ -93,8 +93,8 @@ const Home = () => {
                                 </td>
                                 <td style={{paddingLeft: 50}} className="organization">
                                     <h5>Spending Habits</h5>
-                                    <div>Total Spent: ${totalSpending}</div>
-                                    <div>Weekly budget: ${budget}</div>
+                                    <div>Total Spent: ${Number(totalSpending).toFixed(2)}</div>
+                                    <div>Weekly budget: ${Number(budget).toFixed(2)}</div>
                                     <div>Average weekly spending: ${(totalSpending/weeks).toFixed(2)}</div>
                                     <div>Budget Difference: ${(budget - (totalSpending/weeks)).toFixed(2)}</div>
                                 </td>

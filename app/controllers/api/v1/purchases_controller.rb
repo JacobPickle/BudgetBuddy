@@ -33,6 +33,11 @@ module Api
         render json: @purchase
       end
 
+      def show_by_store_id
+        items = Purchase.where(store_id: params[:store_id])
+        render json: items
+      end
+
       def destroy
         @purchase&.destroy
       end
