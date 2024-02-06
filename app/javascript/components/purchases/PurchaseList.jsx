@@ -132,11 +132,11 @@ const PurchaseList = ({recent}) => {
         <div>
             <form>
                 <select className="form-select form-control" defaultValue={'DEFAULT'} value={storeFilter} onChange={(event) => onChangeStore(event)}>
-                    <option value="DEFAULT">Choose a store filter</option>
+                    <option value="DEFAULT">No Store filter Selected</option>
                     {storeOptions}
                 </select>
                 <select className="form-select form-control" defaultValue={'DEFAULT'} value={storeTypeFilter} onChange={(event) => onChangeStoreType(event)}>
-                    <option value="DEFAULT">Choose a store type filter</option>
+                    <option value="DEFAULT">No Store Type filter Selected</option>
                     {storeTypeOptions}
                 </select>
             </form>
